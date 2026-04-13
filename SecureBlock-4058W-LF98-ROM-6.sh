@@ -5,4 +5,4 @@
 sleep 30
 
 #!/system/bin/pm
-pm disable com.fliphone.secureblock
+pm disable-user com.fliphone.secureblock
