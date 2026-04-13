@@ -5,4 +5,7 @@
 sleep 30
 
 #!/system/bin/pm
-pm disable-user com.fliphone.secureblock
+pm enable com.fliphone.secureblock
+
+#!/system/bin/monkey
+monkey -p com.fliphone.secureblock -c android.intent.category.LAUNCHER 1
