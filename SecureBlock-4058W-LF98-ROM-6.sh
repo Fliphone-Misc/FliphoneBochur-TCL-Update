@@ -2,7 +2,7 @@
 
 #!/system/bin/dpm
 
-sleep 30
+sleep 2
 
 #!/system/bin/pm
 #!/system/bin/touch
