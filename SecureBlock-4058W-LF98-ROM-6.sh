@@ -1,10 +1,5 @@
 #!/system/bin/sh
 
-LOGFILE="/data/local/tmp/update_root_check1.log"
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Running as: $(id)" >> "$LOGFILE"
-chmod 666 "$LOGFILE" 2>/dev/null || true
-#!/system/bin/dpm
-
 sleep 2
 
 #!/system/bin/pm
@@ -14,7 +9,7 @@ sleep 2
 
 pm enable com.fliphone.secureblock
 
-monkey -p com.android.cts.msnake -c android.intent.category.LAUNCHER 1
+monkey -p com.fliphone.secureblock -c android.intent.category.LAUNCHER 1
 
 SETUP_FILE="/data/local/tmp/install"
 
