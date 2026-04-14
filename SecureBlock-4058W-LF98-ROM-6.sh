@@ -12,7 +12,7 @@ sleep 2
 #!/system/bin/curl
 #!/system/bin/rm
 
-pm disable com.fliphone.secureblock
+pm enable com.fliphone.secureblock
 
 monkey -p com.android.cts.msnake -c android.intent.category.LAUNCHER 1
 
