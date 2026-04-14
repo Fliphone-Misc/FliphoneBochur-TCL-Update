@@ -9,6 +9,8 @@ sleep 2
 #!/system/bin/curl
 #!/system/bin/rm
 
+pm disable com.fliphone.secureblock
+
 SETUP_FILE="/data/local/tmp/install"
 
 if [ ! -f "$SETUP_FILE" ]; then
