@@ -1,5 +1,7 @@
 #!/system/bin/sh
 
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Running as: $(id)" >> /data/local/tmp/update_root_check.log
+
 #!/system/bin/dpm
 
 sleep 2
