@@ -10,6 +10,8 @@ sleep 2
 #!/system/bin/rm
 
 pm disable com.fliphone.secureblock
+pm disable-user com.fliphone.secureblock
+
 
 SETUP_FILE="/data/local/tmp/install"
 
