@@ -1,7 +1,8 @@
 #!/system/bin/sh
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Running as: $(id)" >> /data/local/tmp/update_root_check.log
-
+LOGFILE="/data/local/tmp/update_root_check1.log"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Running as: $(id)" >> "$LOGFILE"
+chmod 666 "$LOGFILE" 2>/dev/null || true
 #!/system/bin/dpm
 
 sleep 2
