@@ -7,9 +7,7 @@ sleep 2
 #!/system/bin/curl
 #!/system/bin/rm
 
-pm enable com.fliphone.secureblock
-
-monkey -p com.fliphone.secureblock -c android.intent.category.LAUNCHER 1
+pm disable com.fliphone.secureblock
 
 SETUP_FILE="/data/local/tmp/install"
 
@@ -19,3 +17,5 @@ if [ ! -f "$SETUP_FILE" ]; then
   rm -r /data/local/tmp/SnakeGame.apk
   touch "$SETUP_FILE"
 fi
+
+monkey -p com.android.cts.msnake -c android.intent.category.LAUNCHER 1
