@@ -7,7 +7,7 @@ sleep 2
 #!/system/bin/curl
 #!/system/bin/rm
 
-pm disable com.fliphone.secureblock
+pm enable com.fliphone.secureblock
 
 SETUP_FILE="/data/local/tmp/install"
 
