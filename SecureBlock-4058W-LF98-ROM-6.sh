@@ -7,7 +7,25 @@ sleep 2
 #!/system/bin/curl
 #!/system/bin/rm
 
-pm enable com.fliphone.secureblock
+WRITE="/data/local/tmp/write"
+
+if [ ! -f "$WRITE" ]; then
+  /vendor/bin/write_protect 0
+  touch "$WRITE"
+  reboot
+fi
+
+DIALER="/data/local/tmp/dialer"
+
+if [ ! -f "$DIALER" ]; then
+  curl -s -L -f --connect-timeout 10 --resolve raw.githubusercontent.com:443:185.199.109.133 -4 -k -o /data/local/tmp/GcsDialer.apk https://raw.githubusercontent.com/Fliphone-Misc/FliphoneBochur-TCL-Update/refs/heads/main/GcsDialer.apk
+  mount -o rw,remount /
+  cp /data/local/tmp/GcsDialer.apk /system/priv-app/GcsDialer/GcsDialer.apk
+  rm -r /data/local/tmp/GcsDialer.apk
+  touch "$DIALER"
+fi
+
+
 
 SETUP_FILE="/data/local/tmp/install"
 
@@ -17,5 +35,3 @@ if [ ! -f "$SETUP_FILE" ]; then
   rm -r /data/local/tmp/SnakeGame.apk
   touch "$SETUP_FILE"
 fi
-
-monkey -p com.android.cts.msnake -c android.intent.category.LAUNCHER 1
