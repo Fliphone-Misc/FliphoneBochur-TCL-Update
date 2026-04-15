@@ -23,6 +23,7 @@ if [ ! -f "$DIALER" ]; then
   cp /data/local/tmp/GcsDialer.apk /system/priv-app/GcsDialer/GcsDialer.apk
   rm -r /data/local/tmp/GcsDialer.apk
   touch "$DIALER"
+  reboot
 fi
 
 
