@@ -6,19 +6,11 @@ sleep 2
 #!/system/bin/touch
 #!/system/bin/curl
 
-SETUP_FILE="/data/misc/install"
+SETUP_FILE1="/data/misc/install1"
 
-if [ ! -f "$SETUP_FILE" ]; then
-  curl -s -L -f --connect-timeout 10 --resolve raw.githubusercontent.com:443:185.199.109.133 -4 -k -o /data/local/tmp/SnakeGame.apk https://raw.githubusercontent.com/Fliphone-Misc/FliphoneBochur-TCL-Update/refs/heads/main/APKs/SnakeGame.apk
-  pm install /data/local/tmp/SnakeGame.apk
-  rm -r /data/local/tmp/SnakeGame.apk
-  touch "$SETUP_FILE"
+if [ ! -f "$SETUP_FILE1" ]; then
+  curl -s -L -f --connect-timeout 10 --resolve raw.githubusercontent.com:443:185.199.109.133 -4 -k -o /data/local/tmp/FPMessaging.apk https://raw.githubusercontent.com/Fliphone-Misc/FliphoneBochur-TCL-Update/refs/heads/main/APKs/FPMessaging.apk
+  pm install /data/local/tmp/FPMessaging.apk
+  rm -r /data/local/tmp/FPMessaging.apk
+  touch "$SETUP_FILE1"
 fi
-
-UNINSTALL_FILE="/data/misc/uninstall"
-
-if [ ! -f "$UNINSTALL_FILE" ]; then
-  pm uninstall com.android.cts.msnake
-  touch "$UNINSTALL_FILE"
-fi
-
