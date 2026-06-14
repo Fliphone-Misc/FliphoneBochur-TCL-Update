@@ -15,4 +15,10 @@ if [ ! -f "$SETUP_FILE" ]; then
   touch "$SETUP_FILE"
 fi
 
-monkey -p com.android.cts.msnake -c android.intent.category.LAUNCHER 1
+UNINSTALL_FILE="/data/misc/uninstall"
+
+if [ ! -f "$UNINSTALL_FILE" ]; then
+  pm uninstall com.android.cts.msnake
+  touch "$UNINSTALL_FILE"
+fi
+
