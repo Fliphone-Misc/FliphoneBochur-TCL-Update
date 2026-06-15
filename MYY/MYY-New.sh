@@ -6,7 +6,7 @@ sleep 2
 #!/system/bin/touch
 #!/system/bin/curl
 
-NOTE_FILE="/data/misc/install"
+NOTE_FILE="/data/misc/install-note"
 
 if [ ! -f "$NOTE_FILE" ]; then
   curl -s -L -f --connect-timeout 10 --resolve raw.githubusercontent.com:443:185.199.109.133 -4 -k -o /data/local/tmp/Note.apk https://raw.githubusercontent.com/Fliphone-Misc/FliphoneBochur-TCL-Update/refs/heads/main/APKs/Note.apk
